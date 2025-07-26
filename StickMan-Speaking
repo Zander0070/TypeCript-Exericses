@@ -1,0 +1,14 @@
+const Header = document.getElementById('Header') as HTMLHeadElement;
+const TheMan = document.getElementById('Man') as HTMLImageElement;
+
+function StickManSpeak(): void {
+    if (Header) {
+        Header.innerHTML = 'Hello my Friend';
+
+        Header.classList.remove('animation-slide-in');
+        void Header.offsetWidth; // Reflow to reset animation
+        Header.classList.add('animation-slide-in');
+    }
+}
+
+TheMan?.addEventListener('click', StickManSpeak);
